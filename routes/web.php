@@ -11,10 +11,20 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+use Illuminate\Http\Request;
+
+$router->get('/', function (Request $req) use ($router) {
+    $params = [
+        'offsetLeft' => $req->get('offsetLeft', 0),
+        'offsetTop' => $req->get('offsetTop', 0),
+        'offsetRight' => $req->get('offsetRight', 0),
+        'offsetBottom' => $req->get('offsetBottom', 0),
+        'width' => $req->get('width', 'auto')
+    ];
+
+    return view('loader', $params);
 });
 
-$router->get('/grid', function() {
-    return view('stylesheet');
+$router->get('/test', function (Request $req) use ($router) {
+    return view('frame', ['query' => http_build_query($req->all())]);
 });
