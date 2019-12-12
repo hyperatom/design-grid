@@ -10,7 +10,7 @@ help:
 .PHONY: docker-build
 docker-build: ## Build all docker images, install composer dependencies.
 	$(DOCKER_COMPOSE) build --parallel && \
-	docker run --rm -it -v $(pwd):/app composer install
+	docker run --rm -it -v $(shell pwd):/app composer install
 
 .PHONY: docker-up
 docker-up: ## Start all docker containers.
