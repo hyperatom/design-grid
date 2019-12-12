@@ -19,6 +19,7 @@
             margin-right: 6px;
             float: left;
             background-color: #2d5ab4;
+            margin-bottom: 6px;
         }
     </style>
 </head>
@@ -26,6 +27,9 @@
     <div class="square">1</div>
     <div class="square">2</div>
     <div class="square">3</div>
-    <script type="text/javascript" src="/?{{$query}}"></script>
+    <div class="square">3</div>
+    <div class="square">3</div>
+    <div class="square">3</div>
+    <script type="text/javascript" src="/grid?{{$query}}"></script>
 </body>
 </html>
