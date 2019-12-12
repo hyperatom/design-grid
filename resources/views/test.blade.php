@@ -7,8 +7,6 @@
     <meta name="author" content="RHE Global">
     <style>
         html, body {
-            position: relative;
-            height: 100%;
             margin: 0;
         }
 
@@ -21,15 +19,20 @@
             background-color: #2d5ab4;
             margin-bottom: 6px;
         }
+
+        .container::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
     </style>
 </head>
 <body>
-    <div class="square">1</div>
-    <div class="square">2</div>
-    <div class="square">3</div>
-    <div class="square">3</div>
-    <div class="square">3</div>
-    <div class="square">3</div>
+    <div class="container">
+        @for($i = 0; $i < 300; $i++)
+        <div class="square">{{$i+1}}</div>
+        @endfor
+    </div>
     <script type="text/javascript" src="/grid?{{$query}}"></script>
 </body>
 </html>

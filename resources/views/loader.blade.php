@@ -17,6 +17,10 @@
     });
 
     var css = `
+        body.grid-overlay--visible {
+            position: relative;
+        }
+
         body.grid-overlay--visible::before,
         body.grid-overlay--visible::after {
             content: "";
